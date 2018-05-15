@@ -1,0 +1,31 @@
+{
+  "name": "polybar-github",
+  "version": "1.0.0",
+  "description": "A Polybar module to show unread notifications from GitHub",
+  "main": "main.js",
+  "bin": {
+    "polybar-github": "main.js"
+  },
+  "scripts": {
+    "test": "echo \"Nice test :)\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TiagoDanin/Polyer-GitHub.git"
+  },
+  "keywords": [
+    "polybar",
+    "github",
+    "notifications"
+  ],
+  "author": "TiagoDanin",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/TiagoDanin/Polyer-GitHub/issues"
+  },
+  "homepage": "https://github.com/TiagoDanin/Polyer-GitHub#readme",
+  "dependencies": {
+    "@octokit/rest": "^15.5.1",
+    "caporal": "^0.10.0"
+  }
+}
