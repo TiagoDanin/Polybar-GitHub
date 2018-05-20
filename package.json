@@ -25,7 +25,7 @@
   },
   "homepage": "https://github.com/TiagoDanin/Polyer-GitHub#readme",
   "dependencies": {
-    "@octokit/rest": "15.6.0",
+    "@octokit/rest": "15.6.1",
     "caporal": "0.10.0"
   }
 }
