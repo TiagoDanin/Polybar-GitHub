@@ -24,9 +24,13 @@ prog
 				type: 'token',
 				token: token
 			})
-			const ghOptions = {per_page: 100, participating: showparticipating}
+			const ghOptions = {per_page: 50, participating: showparticipating}
 			const result = await github.activity.getNotifications(ghOptions)
-			logger.info(result.data.length)
+			const notifications = result.data.length
+			if (notifications == 50) {
+				logger.info('+' + notifications)
+			}
+			logger.info(notifications)
 		} catch (e) {
 			logger.error('Error')
 		}
