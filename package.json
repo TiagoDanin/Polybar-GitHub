@@ -1,6 +1,6 @@
 {
   "name": "polybar-github",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A Polybar module to show unread notifications from GitHub",
   "main": "main.js",
   "bin": {
@@ -29,7 +29,7 @@
   "dependencies": {
     "@octokit/rest": "15.11.0",
     "caporal": "0.10.0",
-    "snyk": "^1.94.0"
+    "snyk": "1.94.0"
   },
   "snyk": true
 }

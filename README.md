@@ -1,4 +1,5 @@
 # Polybar-Github
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/1c064a1c0b2d45e4bba8eee9cf393683)](https://www.codacy.com/app/tiagodanin/Polybar-GitHub?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=TiagoDanin/Polybar-GitHub&amp;utm_campaign=Badge_Grade) [![CodeFactor](https://www.codefactor.io/repository/github/tiagodanin/polybar-github/badge)](https://www.codefactor.io/repository/github/tiagodanin/polybar-github) [![Known Vulnerabilities](https://snyk.io/test/github/TiagoDanin/Polybar-GitHub/badge.svg?targetFile=package.json)](https://snyk.io/test/github/TiagoDanin/Polybar-GitHubtargetFile=package.json)
 
 A Polybar module to show unread notifications from GitHub
 

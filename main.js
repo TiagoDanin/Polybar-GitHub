@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 const prog   = require('caporal')
-const client = require('@octokit/rest')
+const Client = require('@octokit/rest')
 
 prog
 	.version('1.0.0')
@@ -17,7 +17,7 @@ prog
 				showparticipating = true
 			}
 
-			const github = new client({
+			const github = new Client({
 				debug: false
 			})
 			github.authenticate({
