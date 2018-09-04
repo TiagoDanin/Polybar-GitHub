@@ -7,7 +7,9 @@
     "polybar-github": "main.js"
   },
   "scripts": {
-    "test": "echo \"Nice test :)\""
+    "test": "echo \"Nice test :)\"",
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
   },
   "repository": {
     "type": "git",
@@ -26,6 +28,8 @@
   "homepage": "https://github.com/TiagoDanin/Polyer-GitHub#readme",
   "dependencies": {
     "@octokit/rest": "15.11.0",
-    "caporal": "0.10.0"
-  }
+    "caporal": "0.10.0",
+    "snyk": "^1.94.0"
+  },
+  "snyk": true
 }
