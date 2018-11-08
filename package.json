@@ -29,7 +29,7 @@
   "dependencies": {
     "@octokit/rest": "15.16.1",
     "caporal": "0.10.0",
-    "snyk": "1.108.0"
+    "snyk": "1.108.1"
   },
   "snyk": true
 }
