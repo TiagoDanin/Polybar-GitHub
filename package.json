@@ -1,29 +1,40 @@
 {
   "name": "polybar-github",
+  "main": "index.js",
   "version": "2.0.0",
   "description": "A Polybar module to show unread notifications from GitHub",
-  "main": "index.js",
-  "bin": {
-    "polybar-github": "index.js"
+  "author": {
+    "name": "Tiago Danin",
+    "email": "TiagoDanin@outlook.com",
+    "url": "https://TiagoDanin.github.io"
   },
-  "scripts": {
-    "test": "echo \"Nice test :)\""
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/TiagoDanin/Polyer-GitHub.git"
-  },
+  "license": "MIT",
   "keywords": [
     "polybar",
     "github",
-    "notifications"
+    "notifications",
+    "notification"
   ],
-  "author": "TiagoDanin",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/TiagoDanin/Polyer-GitHub/issues"
+  "scripts": {
+    "test": "echo \"Nice test :)\""
   },
-  "homepage": "https://github.com/TiagoDanin/Polyer-GitHub#readme",
+  "private": false,
+  "repository": "https://github.com/TiagoDanin/Polybar-GitHub.git",
+  "homepage": "https://TiagoDanin.github.io/Polybar-GitHub",
+  "bugs": "https://github.com/TiagoDanin/Polybar-GitHub/issues",
+  "github": {
+    "name": "Polybar-GitHub",
+    "owner": "TiagoDanin"
+  },
+  "files": [
+    "LICENSE",
+    "README.md",
+    "index.js",
+    "package.json"
+  ],
+  "bin": {
+    "polybar-github": "index.js"
+  },
   "dependencies": {
     "@octokit/rest": "15.17.0",
     "node-notifier": "5.3.0",
