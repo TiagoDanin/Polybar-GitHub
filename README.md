@@ -59,7 +59,7 @@ And create a file in $HOME/.config/polybar/.env/github.
 
 - [@octokit/rest](https://ghub.io/@octokit/rest): GitHub REST API client for Node.js
 - [node-notifier](https://ghub.io/node-notifier): A Node.js module for sending notifications on native Mac, Windows (post and pre 8) and Linux (or Growl as fallback)
-- [polybar-helpers](https://ghub.io/polybar-helpers): [WIP] Polybar - Helpers to create plugin/module using NodeJS
+- [polybar-helpers](https://ghub.io/polybar-helpers): Polybar - Helpers to create plugin/module using NodeJS
 
 ## License
 
