@@ -69,7 +69,7 @@ const main = async () => {
 			showParticipating = false
 		}
 
-		var result = await github.activity.getNotifications({
+		var result = await github.activity.listNotifications({
 			per_page: 50,
 			participating: showParticipating
 		}).catch((e) => {
