@@ -77,27 +77,26 @@ const main = async () => {
 		})
 		if (result) {
 			notifications = result.data.reduce((_, notification) => {
-				//console.log(notification)
 				if (!processIds.includes(notification.id)) {
 					processIds.push(notification.id)
 					if (config.mode.id == 'all') {
 						sendNotification(
 							notification.id,
 							notification.subject.title,
-							notification.subject.ype
+							notification.subject.type
 						)
 					} else {
-						if (notification.reason == 'participant') {
+						if (notification.reason != 'subscribed') {
 							sendNotification(
 								notification.id,
 								notification.subject.title,
-								notification.subject.ype
+								notification.subject.type
 							)
 						}
 					}
 				}
 				_.all.push(notification)
-				if (notification.participant) {
+				if (notification.reason != 'subscribed') {
 					_.participating.push(notification)
 				}
 				return _
