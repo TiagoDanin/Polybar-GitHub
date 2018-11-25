@@ -157,11 +157,11 @@ path-key@^2.0.0, path-key@^2.0.1:
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/path-key/-/path-key-2.0.1.tgz#411cadb574c5a140d3a4b1910d40d80cc9f40b40"
 
-polybar-helpers@1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/polybar-helpers/-/polybar-helpers-1.0.0.tgz#c3966eab6d351652e180f429d3fd57d1a1ccd0c4"
+polybar-helpers@1.0.2:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/polybar-helpers/-/polybar-helpers-1.0.2.tgz#b8fb327fb73be5832913b39f5cb3f458579bdf7a"
   dependencies:
-    tail "2.0.0"
+    tail "2.0.1"
 
 semver@^5.5.0:
   version "5.6.0"
@@ -189,9 +189,9 @@ strip-eof@^1.0.0:
   version "1.0.0"
   resolved "http://registry.npmjs.org/strip-eof/-/strip-eof-1.0.0.tgz#bb43ff5598a6eb05d89b59fcd129c983313606bf"
 
-tail@2.0.0:
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/tail/-/tail-2.0.0.tgz#ef16cd67fe4842c8c608571cf6228cf2fab6af2a"
+tail@2.0.1:
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/tail/-/tail-2.0.1.tgz#f4cd9d514512e77d0eb2aaacd5520d578fe20271"
 
 universal-user-agent@^2.0.0, universal-user-agent@^2.0.1:
   version "2.0.2"

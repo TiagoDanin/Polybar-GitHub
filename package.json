@@ -38,6 +38,6 @@
   "dependencies": {
     "@octokit/rest": "16.0.1",
     "node-notifier": "5.3.0",
-    "polybar-helpers": "1.0.0"
+    "polybar-helpers": "1.0.2"
   }
 }
