@@ -82,28 +82,55 @@ baseURL: https://tiagodanin.github.io
 
 <div class="uk-container">
 	<h1 id="polybar-github"><a href="#polybar-github">Polybar-Github</a></h1>
-<p><a href="https://www.codacy.com/app/tiagodanin/Polybar-GitHub?utm_source=github.com&#x26;utm_medium=referral&#x26;utm_content=TiagoDanin/Polybar-GitHub&#x26;utm_campaign=Badge_Grade"><img src="https://api.codacy.com/project/badge/Grade/1c064a1c0b2d45e4bba8eee9cf393683" alt="Codacy Badge"></a> <a href="https://www.codefactor.io/repository/github/tiagodanin/polybar-github"><img src="https://www.codefactor.io/repository/github/tiagodanin/polybar-github/badge" alt="CodeFactor"></a> <a href="https://snyk.io/test/github/TiagoDanin/Polybar-GitHubtargetFile=package.json"><img src="https://snyk.io/test/github/TiagoDanin/Polybar-GitHub/badge.svg?targetFile=package.json" alt="Known Vulnerabilities"></a></p>
 <p>A Polybar module to show unread notifications from GitHub</p>
 <h2 id="installation"><a href="#installation">Installation</a></h2>
 <p>This is a <a href="https://nodejs.org/">Node.js</a> module available through the
 <a href="https://www.npmjs.com/">npm registry</a>. It can be installed using the
-<a href="https://docs.npmjs.com/getting-started/installing-npm-packages-locally"><code>npm</code></a> command line tools.</p>
-<pre><code class="hljs language-sh">npm install polybar-github -g</code></pre>
-<h2 id="example-of-config-in-polybar"><a href="#example-of-config-in-polybar">Example of Config in Polybar</a></h2>
-<pre><code>; Github custom
+<a href="https://docs.npmjs.com/getting-started/installing-npm-packages-locally"><code>npm</code></a>
+or
+<a href="https://yarnpkg.com/en/"><code>yarn</code></a>
+command line tools.</p>
+<pre><code class="hljs language-sh">npm install --global polybar-github</code></pre>
+<h2 id="usage"><a href="#usage">Usage</a></h2>
+<p>Cli:</p>
+<pre><code class="hljs language-bash">polybar-github FILE GH_TOKEN TIME/s MODE NOTIFICATION</code></pre>
+<ul>
+<li>File: tail file</li>
+<li>Gh-Token: GitHub Token</li>
+<li>Time: Interval</li>
+<li>Mode:
+- Default: <code>all+participating</code>
+- <code>all</code>:
+- Format: <code>AllNotificationsNumber</code>
+- Notification: All types
+- <code>all+participating</code>:
+- Format: <code>AllNotificationsNumber (AllParticipatingNumber)</code>
+- Notifcation: Participating
+- <code>participating</code>:
+- Format: <code>AllParticipatingNumber</code>
+- Notifcation: Participating</li>
+<li>Notification: <code>true</code> or <code>false</code>.
+- Default: <code>true</code></li>
+</ul>
+<p>Polybar Config:</p>
+<pre><code>; Polybar GitHub
 [module/github]
 type = custom/script
-format-prefix = "Github: "
-interval = 160
-format-foreground = #cc1122
-exec = polybar-github YOUTOKEN false
+format-prefix = "GitHub: "
+exec = polybar-github $HOME/.config/polybar/.env/github $TOKEN 60 all true
+click-left = echo left >> $HOME/.config/polybar/.env/github
+click-middle = echo middle >> $HOME/.config/polybar/.env/github
+click-right = echo right >> $HOME/.config/polybar/.env/github
+scroll-up = echo scrollUp >> $HOME/.config/polybar/.env/github
+scroll-down = echo scrollDown >> $HOME/.config/polybar/.env/github
+tail = true
 </code></pre>
-<h2 id="cli-options"><a href="#cli-options">CLI Options</a></h2>
-<p>See in <code>polybar-github --help</code> :)</p>
+<p>And create a file in $HOME/.config/polybar/.env/github.</p>
 <h2 id="dependencies"><a href="#dependencies">Dependencies</a></h2>
 <ul>
 <li><a href="https://ghub.io/@octokit/rest">@octokit/rest</a>: GitHub REST API client for Node.js</li>
-<li><a href="https://ghub.io/caporal">caporal</a>: A full-featured framework for building command line applications (cli) with node.js</li>
+<li><a href="https://ghub.io/node-notifier">node-notifier</a>: A Node.js module for sending notifications on native Mac, Windows (post and pre 8) and Linux (or Growl as fallback)</li>
+<li><a href="https://ghub.io/polybar-helpers">polybar-helpers</a>: [WIP] Polybar - Helpers to create plugin/module using NodeJS</li>
 </ul>
 <h2 id="license"><a href="#license">License</a></h2>
 <p>MIT</p>
