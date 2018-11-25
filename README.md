@@ -1,5 +1,4 @@
 # Polybar-Github
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/1c064a1c0b2d45e4bba8eee9cf393683)](https://www.codacy.com/app/tiagodanin/Polybar-GitHub?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=TiagoDanin/Polybar-GitHub&amp;utm_campaign=Badge_Grade) [![CodeFactor](https://www.codefactor.io/repository/github/tiagodanin/polybar-github/badge)](https://www.codefactor.io/repository/github/tiagodanin/polybar-github) [![Known Vulnerabilities](https://snyk.io/test/github/TiagoDanin/Polybar-GitHub/badge.svg?targetFile=package.json)](https://snyk.io/test/github/TiagoDanin/Polybar-GitHubtargetFile=package.json)
 
 A Polybar module to show unread notifications from GitHub
 
@@ -7,32 +6,60 @@ A Polybar module to show unread notifications from GitHub
 
 This is a [Node.js](https://nodejs.org/) module available through the
 [npm registry](https://www.npmjs.com/). It can be installed using the
-[`npm`](https://docs.npmjs.com/getting-started/installing-npm-packages-locally) command line tools.
+[`npm`](https://docs.npmjs.com/getting-started/installing-npm-packages-locally)
+or
+[`yarn`](https://yarnpkg.com/en/)
+command line tools.
 
 ```sh
-npm install polybar-github -g
+npm install --global polybar-github
 ```
 
-## Example of Config in Polybar
+## Usage
 
+Cli:
+```bash
+polybar-github FILE GH_TOKEN TIME/s MODE NOTIFICATION
 ```
-; Github custom
+- File: tail file
+- Gh-Token: GitHub Token
+- Time: Interval
+- Mode:
+	- Default: `all+participating`
+	- `all`:
+		- Format: `AllNotificationsNumber`
+		- Notification: All types
+	- `all+participating`:
+		- Format: `AllNotificationsNumber (AllParticipatingNumber)`
+		- Notifcation: Participating
+	- `participating`:
+		- Format: `AllParticipatingNumber`
+		- Notifcation: Participating
+- Notification: `true` or `false`.
+	- Default: `true`
+
+Polybar Config:
+```
+; Polybar GitHub
 [module/github]
 type = custom/script
-format-prefix = "Github: "
-interval = 160
-format-foreground = #cc1122
-exec = polybar-github YOUTOKEN false
+format-prefix = "GitHub: "
+exec = polybar-github $HOME/.config/polybar/.env/github $TOKEN 60 all true
+click-left = echo left >> $HOME/.config/polybar/.env/github
+click-middle = echo middle >> $HOME/.config/polybar/.env/github
+click-right = echo right >> $HOME/.config/polybar/.env/github
+scroll-up = echo scrollUp >> $HOME/.config/polybar/.env/github
+scroll-down = echo scrollDown >> $HOME/.config/polybar/.env/github
+tail = true
 ```
 
-## CLI Options
-
-See in `polybar-github --help` :)
+And create a file in $HOME/.config/polybar/.env/github.
 
 ## Dependencies
 
 - [@octokit/rest](https://ghub.io/@octokit/rest): GitHub REST API client for Node.js
-- [caporal](https://ghub.io/caporal): A full-featured framework for building command line applications (cli) with node.js
+- [node-notifier](https://ghub.io/node-notifier): A Node.js module for sending notifications on native Mac, Windows (post and pre 8) and Linux (or Growl as fallback)
+- [polybar-helpers](https://ghub.io/polybar-helpers): [WIP] Polybar - Helpers to create plugin/module using NodeJS
 
 ## License
 
