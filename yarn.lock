@@ -20,9 +20,9 @@
     node-fetch "^2.3.0"
     universal-user-agent "^2.0.1"
 
-"@octokit/rest@16.6.1":
-  version "16.6.1"
-  resolved "https://registry.yarnpkg.com/@octokit/rest/-/rest-16.6.1.tgz#27cfd4cdca1d22dc93887ad248b78ad425204e37"
+"@octokit/rest@16.7.0":
+  version "16.7.0"
+  resolved "https://registry.yarnpkg.com/@octokit/rest/-/rest-16.7.0.tgz#e17bdf3387d6994631d8fc74e223db9a2f247d9e"
   dependencies:
     "@octokit/request" "2.2.1"
     before-after-hook "^1.2.0"
