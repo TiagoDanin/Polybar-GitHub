@@ -28,9 +28,9 @@
     once "^1.4.0"
     universal-user-agent "^4.0.0"
 
-"@octokit/rest@16.33.1":
-  version "16.33.1"
-  resolved "https://registry.yarnpkg.com/@octokit/rest/-/rest-16.33.1.tgz#19229f5fd28d8e071644d37c249775ee40add433"
+"@octokit/rest@16.34.1":
+  version "16.34.1"
+  resolved "https://registry.yarnpkg.com/@octokit/rest/-/rest-16.34.1.tgz#e28b5a573ca2f15bb002f90bc010020845ed9c01"
   dependencies:
     "@octokit/request" "^5.2.0"
     "@octokit/request-error" "^1.0.2"
