@@ -2,6 +2,12 @@
 # yarn lockfile v1
 
 
+"@octokit/auth-token@^2.4.0":
+  version "2.4.0"
+  resolved "https://registry.yarnpkg.com/@octokit/auth-token/-/auth-token-2.4.0.tgz#b64178975218b99e4dfe948253f0673cbbb59d9f"
+  dependencies:
+    "@octokit/types" "^2.0.0"
+
 "@octokit/endpoint@^5.1.0":
   version "5.3.5"
   resolved "https://registry.yarnpkg.com/@octokit/endpoint/-/endpoint-5.3.5.tgz#2822c3b01107806dbdce3863b6205e3eff4289ed"
@@ -28,10 +34,11 @@
     once "^1.4.0"
     universal-user-agent "^4.0.0"
 
-"@octokit/rest@16.37.0":
-  version "16.37.0"
-  resolved "https://registry.yarnpkg.com/@octokit/rest/-/rest-16.37.0.tgz#e08501c471199cb4942587f2425a7990b34a49eb"
+"@octokit/rest@16.38.3":
+  version "16.38.3"
+  resolved "https://registry.yarnpkg.com/@octokit/rest/-/rest-16.38.3.tgz#d5d200f88962392f71e048e12833ea36f4e0d192"
   dependencies:
+    "@octokit/auth-token" "^2.4.0"
     "@octokit/request" "^5.2.0"
     "@octokit/request-error" "^1.0.2"
     atob-lite "^2.0.0"
@@ -44,6 +51,16 @@
     octokit-pagination-methods "^1.1.0"
     once "^1.4.0"
     universal-user-agent "^4.0.0"
+
+"@octokit/types@^2.0.0":
+  version "2.1.1"
+  resolved "https://registry.yarnpkg.com/@octokit/types/-/types-2.1.1.tgz#77e80d1b663c5f1f829e5377b728fa3c4fe5a97d"
+  dependencies:
+    "@types/node" ">= 8"
+
+"@types/node@>= 8":
+  version "13.5.0"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-13.5.0.tgz#4e498dbf355795a611a87ae5ef811a8660d42662"
 
 atob-lite@^2.0.0:
   version "2.0.0"
