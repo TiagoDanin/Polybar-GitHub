@@ -3,6 +3,7 @@
 const polybarHelpers = require('polybar-helpers')
 const notifier = require('node-notifier')
 const Client = require('@octokit/rest')
+const url = require('url');
 
 const falidArgv = () => {
 	console.log('Usage: polybar-github .env/github GH_TOKEN TIME/s MODE NOTIFICATION')
@@ -46,16 +47,28 @@ github.authenticate({
 	token: config.token
 })
 
-const sendNotification = (id, title, type) => {
+const sendNotification = (id, title, type, url) => {
 	if (!config.notification) {
 		return false
 	}
-	console.log(id)
+	console.log(id);
 	return notifier.notify({
 		title: `GH#${id} - ${type}`,
+		category: 'polybar-github',
+		open: url,
 		message: title,
 		time: 4000
-	})
+	});
+}
+
+const buildUrl = (notification) => {
+	const notificationApiUrl = url.parse(notification.subject.url);
+	const pathSegments = notificationApiUrl.pathname
+		.split('/')
+		.filter((seg) => { return !['', 'repos'].includes(seg); })
+		.map((seg) => { return seg === 'pulls' ? 'pull' : seg; })
+		.join('/');
+	return `https://github.com/${pathSegments}`;
 }
 
 var notifications = 'Offline'
@@ -83,14 +96,16 @@ const main = async () => {
 						sendNotification(
 							notification.id,
 							notification.subject.title,
-							notification.subject.type
+							notification.subject.type,
+							buildUrl(notification)
 						)
 					} else {
 						if (notification.reason != 'subscribed') {
 							sendNotification(
 								notification.id,
 								notification.subject.title,
-								notification.subject.type
+								notification.subject.type,
+								buildUrl(notification)
 							)
 						}
 					}
