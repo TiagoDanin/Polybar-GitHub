@@ -36,7 +36,7 @@
     "polybar-github": "index.js"
   },
   "dependencies": {
-    "@octokit/rest": "17.1.0",
+    "@octokit/rest": "17.1.4",
     "node-notifier": "6.0.0",
     "polybar-helpers": "1.0.2"
   }
