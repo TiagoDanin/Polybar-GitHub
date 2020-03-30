@@ -8,16 +8,16 @@
   dependencies:
     "@octokit/types" "^2.0.0"
 
-"@octokit/core@^2.4.0":
-  version "2.4.1"
-  resolved "https://registry.yarnpkg.com/@octokit/core/-/core-2.4.1.tgz#8bd31c93c1f77ab24950cf349422364329c9b239"
+"@octokit/core@^2.4.3":
+  version "2.4.3"
+  resolved "https://registry.yarnpkg.com/@octokit/core/-/core-2.4.3.tgz#f51c0c228e6aa01253f9452ba5a25dc20aee8577"
   dependencies:
     "@octokit/auth-token" "^2.4.0"
     "@octokit/graphql" "^4.3.1"
     "@octokit/request" "^5.3.1"
     "@octokit/types" "^2.0.0"
     before-after-hook "^2.1.0"
-    universal-user-agent "^4.0.0"
+    universal-user-agent "^5.0.0"
 
 "@octokit/endpoint@^5.5.0":
   version "5.5.2"
@@ -45,9 +45,9 @@
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/@octokit/plugin-request-log/-/plugin-request-log-1.0.0.tgz#eef87a431300f6148c39a7f75f8cfeb218b2547e"
 
-"@octokit/plugin-rest-endpoint-methods@^3.3.0":
-  version "3.3.0"
-  resolved "https://registry.yarnpkg.com/@octokit/plugin-rest-endpoint-methods/-/plugin-rest-endpoint-methods-3.3.0.tgz#9b39fb3d90565322fa8a3bfc0063cb7ba2997e34"
+"@octokit/plugin-rest-endpoint-methods@3.4.0":
+  version "3.4.0"
+  resolved "https://registry.yarnpkg.com/@octokit/plugin-rest-endpoint-methods/-/plugin-rest-endpoint-methods-3.4.0.tgz#27b1dac7fba4d0d6e488967919b6a5bd3595ffbc"
   dependencies:
     "@octokit/types" "^2.0.1"
     deprecation "^2.3.1"
@@ -72,14 +72,14 @@
     once "^1.4.0"
     universal-user-agent "^4.0.0"
 
-"@octokit/rest@17.1.0":
-  version "17.1.0"
-  resolved "https://registry.yarnpkg.com/@octokit/rest/-/rest-17.1.0.tgz#32df64d9dd4855339e9957524a84ced72762a53b"
+"@octokit/rest@17.1.4":
+  version "17.1.4"
+  resolved "https://registry.yarnpkg.com/@octokit/rest/-/rest-17.1.4.tgz#b03eb97635de62b48428f998ad1cb9244edd2d10"
   dependencies:
-    "@octokit/core" "^2.4.0"
+    "@octokit/core" "^2.4.3"
     "@octokit/plugin-paginate-rest" "^2.0.0"
     "@octokit/plugin-request-log" "^1.0.0"
-    "@octokit/plugin-rest-endpoint-methods" "^3.3.0"
+    "@octokit/plugin-rest-endpoint-methods" "3.4.0"
 
 "@octokit/types@^2.0.0", "@octokit/types@^2.0.1":
   version "2.1.1"
@@ -243,6 +243,12 @@ tail@2.0.1:
 universal-user-agent@^4.0.0:
   version "4.0.0"
   resolved "https://registry.yarnpkg.com/universal-user-agent/-/universal-user-agent-4.0.0.tgz#27da2ec87e32769619f68a14996465ea1cb9df16"
+  dependencies:
+    os-name "^3.1.0"
+
+universal-user-agent@^5.0.0:
+  version "5.0.0"
+  resolved "https://registry.yarnpkg.com/universal-user-agent/-/universal-user-agent-5.0.0.tgz#a3182aa758069bf0e79952570ca757de3579c1d9"
   dependencies:
     os-name "^3.1.0"
 
