@@ -56,7 +56,7 @@ const sendNotification = (id, title, type, url) => {
 	return notifier.notify({
 		title: `GH#${id} - ${type}`,
 		category: 'polybar-github',
-		icon: path.join(__dirname, 'github.png')
+		icon: path.join(__dirname, 'github.png'),
 		open: url,
 		message: title,
 		time: 4
