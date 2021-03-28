@@ -2,7 +2,10 @@
 
 const polybarHelpers = require('polybar-helpers')
 const notifier = require('node-notifier')
-const Client = require('@octokit/rest')
+const { Octokit } = require('@octokit/rest')
+const path = require('path')
+const fs = require('fs')
+const homedir = require('os').homedir();
 const url = require('url');
 
 const falidArgv = () => {
@@ -38,31 +41,30 @@ config.time = process.argv[4] || falidArgv()
 config.mode = selectMode(process.argv[5] || 'all+participating')
 config.notification = process.argv[6] || 'true'
 config.notification = config.notification == 'true' ? true : false
+config.eventsFile = path.join(homedir, ".config/polybar/.env/github")
 
-const github = new Client({
-	debug: false
-})
-github.authenticate({
-	type: 'token',
-	token: config.token
+const github = new Octokit({
+	debug: false,
+	auth: config.token
 })
 
 const sendNotification = (id, title, type, url) => {
 	if (!config.notification) {
 		return false
 	}
-	console.log(id);
+	// console.log(id);
 	return notifier.notify({
 		title: `GH#${id} - ${type}`,
 		category: 'polybar-github',
+		icon: path.join(__dirname, 'github.png'),
 		open: url,
 		message: title,
-		time: 4000
+		time: 4
 	});
 }
 
 const buildUrl = (notification) => {
-	const notificationApiUrl = url.parse(notification.subject.url);
+	const notificationApiUrl = url.parse(notification.url);
 	const pathSegments = notificationApiUrl.pathname
 		.split('/')
 		.filter((seg) => { return !['', 'repos'].includes(seg); })
@@ -82,7 +84,7 @@ const main = async () => {
 			showParticipating = false
 		}
 
-		var result = await github.activity.listNotifications({
+		var result = await github.activity.listNotificationsForAuthenticatedUser({
 			per_page: 50,
 			participating: showParticipating
 		}).catch((e) => {
@@ -132,7 +134,7 @@ const main = async () => {
 			}
 			notifications = config.mode.print(notifications)
 		}
-		console.log(notifications)
+		// console.log(notifications)
 		await new Promise((resolve) => setTimeout(
 			resolve,
 			(Number(config.time) * 1000)
@@ -140,12 +142,22 @@ const main = async () => {
 	}
 }
 
+// Check for existence of given eventsFile
+function checkEventsFile(name) {
+  try {
+    fs.readFile(name)
+  } catch (error) {
+    fs.writeFileSync(name, '')
+  }
+}
+
 main()
 polybarHelpers(
 	(app) => {
-		app.file('/home/tiago/test')
+		checkEventsFile(config.eventsFile)
+		app.file(config.eventsFile)
 		app.on(['right', 'middle', 'left'], (ctx) => {
-			console.log(ctx.event)
+			// console.log(ctx.event)
 			if (ctx.event == 'right') {
 				config.mode = selectMode('all')
 			} else if (ctx.event == 'middle') {
